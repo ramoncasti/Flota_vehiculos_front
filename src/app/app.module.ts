@@ -14,6 +14,7 @@ import { SharedModule } from 'primeng/api';
 import { HomeModule } from './domain/home/home.module';
 import { AuthService } from './shared/service/auth.service';
 import {MenubarModule} from 'primeng/menubar';
+import { UsuarioModule } from './domain/usuario/usuario.module';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MenubarModule} from 'primeng/menubar';
     HttpClientModule,
     LoginModule,
     HomeModule,
-    MenubarModule
+    MenubarModule,
+    UsuarioModule
   ],
   providers: [
     AuthGuard,

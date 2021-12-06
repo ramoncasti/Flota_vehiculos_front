@@ -1,0 +1,43 @@
+
+
+<div class="p-fluid p-grid">
+    <div class="p-col-12 p-md-6">
+        <div class="card">
+            <div class="p-field">
+                <span class="p-float-label">
+                    <input type="text" id="lblNombre" pInputText [(ngModel)]="usuario.nombre"> 
+                    <label for="lblNombre">Nombre</label>
+                </span>
+            </div>
+
+
+            <div class="p-fluid">
+                <div class="p-field">
+                    <span class="p-float-label">
+                        <input [disabled]="isModoEdicion" type="text" id="lblUsername" pInputText [(ngModel)]="usuario.login"> 
+                        <label for="lblUsername">Username</label>
+                    </span>
+                </div>
+            </div>
+
+            <div *ngIf="isUsuarioLoggueado" class="p-field">
+                <span class="p-field">
+                    <label for="psw1">Nueva Contraseña</label>
+                    <p-password id="psw1" [(ngModel)]="psw1"></p-password>
+                </span>
+            </div>
+            
+            <div *ngIf="isUsuarioLoggueado" class="p-field">
+                <span class="p-field">
+                    <label for="psw2">Repita Contraseña</label>
+                    <p-password id="psw2" [(ngModel)]="psw2"></p-password>
+                </span>
+            </div>
+
+            <div class="p-field">
+                <button pButton pRipple type="button" (click)="isModoEdicion ? updateUsuario() : addUsuario()" styleClass="p-button-success p-mr-2 p-mb-2"  label="Guardar" ></button>
+            </div>
+
+        </div>
+    </div>
+</div>
