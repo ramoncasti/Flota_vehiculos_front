@@ -9,7 +9,7 @@
 
                 <!-- <span class="text-danger">El correo es obligatorio</span> -->
                 <div class="wrap-input100 m-b-16">
-                    <input class="input100" type="text" name="login" placeholder="Username" 
+                    <input id="inputUsername" class="input100" type="text" name="login" placeholder="Username" 
                     (blur)="user.login = getValue($event)"
                     (keyup.enter)="focusPassword()">
 
@@ -18,8 +18,8 @@
 
                 <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
                 <div class="wrap-input100 m-b-16" data-validate="Password is required">
-                    <input class="input100" type="password" name="pass" placeholder="Password"
-                        (blur)="user.contrasena = getValue($event)" (keyup.enter)="focusBtnEnter()">
+                    <input id="inputPassword" class="input100" type="password" name="pass" placeholder="Password"
+                        (blur)="user.Contrasenia = getValue($event)" (keyup.enter)="focusBtnEnter()">
                     <span class="focus-input100"></span>
                 </div>
 
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="container-login100-form-btn m-t-17">
-                    <button class="login100-form-btn" type="submit" (click)="login()">
+                    <button id="btnEnter" class="login100-form-btn" type="submit" (click)="login()">
                         Ingresar
                     </button>
                 </div>

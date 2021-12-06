@@ -9,14 +9,19 @@ import { User } from 'src/app/domain/auth/user.model';
 })
 export class AuthService {
 
-  api = "http:/localhost:3000/Login";
+  api = "http://localhost:3000/login";
   
   constructor(private router:Router,private httpClient:HttpClient) { 
 
   }
 
-  login(user: User){
-    return this.httpClient.post(this.api, user);
+  async login(user: User){
+    return await this.httpClient.post(this.api, user).toPromise().then(result => this.storage(result));
+  }
+
+  storage(result:any){
+    localStorage.setItem('token',result.token);
+    this.router.navigate(['/']);
   }
 
   userLogged(): Boolean{

@@ -26,12 +26,10 @@ export class LoginComponent implements OnInit {
 
 
   login(){
-    try{
     this.authService.login(this.user)
-    }
-    catch(error){
+    .catch(error => {
       this.messageService.add({severity:'error', summary:'Error', detail:'Usuario o Contraseña incorrectos'});
-    }
+    })
   }
 
 getValue(event:any){

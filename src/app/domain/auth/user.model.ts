@@ -1,5 +1,5 @@
 export class User {
     login:string="";
-    contrasena:string="";
+    Contrasenia:string="";
 }
 

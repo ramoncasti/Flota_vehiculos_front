@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './guard/auth.guard';
 import { LoginModule } from './domain/auth/login.module';
 import { SharedModule } from 'primeng/api';
+import { HomeModule } from './domain/home/home.module';
+import { AuthService } from './shared/service/auth.service';
+import {MenubarModule} from 'primeng/menubar';
 
 
 @NgModule({
@@ -25,10 +28,13 @@ import { SharedModule } from 'primeng/api';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    LoginModule
+    LoginModule,
+    HomeModule,
+    MenubarModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
